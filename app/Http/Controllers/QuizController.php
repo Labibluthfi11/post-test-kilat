@@ -108,8 +108,13 @@ class QuizController extends Controller
         $detailedAnswers = [];
 
         foreach ($questions as $question) {
-            $userAnswer = $answers[$question->id] ?? null;
-            $isCorrect = ($userAnswer === $question->correct_answer);
+            $userAnswerKey = $answers[$question->id] ?? null;
+            
+            // Ambil teks berdasarkan kunci, jika null kasih 'Tidak dijawab'
+            $userAnswerText = $question->options[$userAnswerKey] ?? 'Tidak dijawab';
+            $correctAnswerText = $question->options[$question->correct_answer] ?? '-';
+            
+            $isCorrect = ($userAnswerKey === $question->correct_answer);
 
             if ($isCorrect) {
                 $correctCount++;
@@ -117,10 +122,9 @@ class QuizController extends Controller
 
             $detailedAnswers[$question->id] = [
                 'question' => $question->question,
-                'user_answer' => $userAnswer,
-                'correct_answer' => $question->correct_answer,
+                'user_answer' => $userAnswerText, // Simpan teks
+                'correct_answer' => $correctAnswerText, // Simpan teks
                 'is_correct' => $isCorrect,
-                'options' => $question->options
             ];
         }
 

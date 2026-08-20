@@ -22,3 +22,6 @@ Route::get('/admin/questions', [App\Http\Controllers\Admin\QuestionController::c
 Route::get('/admin/questions/create', [App\Http\Controllers\Admin\QuestionController::class, 'create'])->name('admin.questions.create');
 Route::post('/admin/questions', [App\Http\Controllers\Admin\QuestionController::class, 'store'])->name('admin.questions.store');
 Route::delete('/admin/questions/{question}', [App\Http\Controllers\Admin\QuestionController::class, 'destroy'])->name('admin.questions.destroy');
+
+// Route Detail Ujian Admin
+Route::get('/admin/results/{id}', [AdminController::class, 'showResult'])->name('admin.results.show');

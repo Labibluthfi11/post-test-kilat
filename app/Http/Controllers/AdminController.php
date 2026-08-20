@@ -75,6 +75,20 @@ class AdminController extends Controller
     }
 
     /**
+     * Tampilkan Detail Hasil Ujian.
+     */
+    public function showResult($id)
+    {
+        if (!session('admin_logged_in')) {
+            return redirect()->route('admin.login')->with('error', 'Silakan login.');
+        }
+
+        $result = QuizResult::findOrFail($id);
+
+        return view('admin.results.show', compact('result'));
+    }
+
+    /**
      * Logout admin.
      */
     public function logout()
