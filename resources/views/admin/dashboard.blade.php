@@ -26,7 +26,7 @@
 
     <!-- Filter Bar -->
     <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-200 flex flex-col sm:flex-row gap-3">
-        <input type="text" id="searchInput" placeholder="Cari berdasarkan Nama, Materi, atau Tanggal (YYYY-MM-DD)..." 
+        <input type="text" id="searchInput" placeholder="Cari berdasarkan Nama, Materi, atau Tanggal..." 
                class="flex-grow border border-slate-300 rounded-lg px-4 py-3 text-sm focus:ring-2 focus:ring-indigo-500 focus:outline-none">
         <button onclick="exportTableToExcel('resultsTable', 'Laporan-Rekap-Ujian')" 
                 class="bg-green-600 text-white px-4 py-3 rounded-lg text-sm font-semibold hover:bg-green-700">
@@ -59,7 +59,7 @@
                             <td class="px-6 py-4 text-slate-600">{{ $result->department }}</td>
                             <td class="px-6 py-4 text-slate-600">{{ $result->training_material }}</td>
                             <td class="px-6 py-4 font-bold text-indigo-600">{{ $result->score }}</td>
-                            <td class="px-6 py-4 text-slate-500">{{ $result->created_at->format('Y-m-d') }}</td>
+                            <td class="px-6 py-4 text-slate-500">27 Februari 2026</td>
                             <td class="px-6 py-4">
                                 <span class="px-2.5 py-0.5 rounded-full text-xs font-bold 
                                     {{ $result->status === 'Lulus' ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700' }}">
