@@ -18,7 +18,7 @@
                 <label class="block text-sm font-semibold mb-2">Departemen</label>
                 <select name="department" class="w-full bg-slate-50 border-0 rounded-2xl px-4 py-3 focus:ring-2 focus:ring-indigo-500" required>
                     <option value="">Pilih Departemen</option>
-                    @foreach(['Produksi', 'HRGA', 'IT', 'Finance', 'Sales', 'Warehouse'] as $dept)
+                    @foreach(['Produksi', 'HRGA', 'GA', 'PPIC', 'Warehouse', 'Operasional', 'Quality and Development', 'Finance', 'Purchasing', 'Sales and Marketing', 'IT', 'Manager', 'Security Fence'] as $dept)
                         <option value="{{ $dept }}">{{ $dept }}</option>
                     @endforeach
                 </select>

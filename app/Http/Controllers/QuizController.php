@@ -26,7 +26,7 @@ class QuizController extends Controller
     {
         $validated = $request->validate([
             'name' => 'required|string|max:255',
-            'department' => 'required|string|in:Produksi,HRGA,GA,PPIC,Warehouse,Quality and Development,Finance,Purchasing,Sales and Marketing,IT,Manager,Security Fence',
+            'department' => 'required|string|in:Produksi,HRGA,GA,PPIC,Warehouse,Operasional,Quality and Development,Finance,Purchasing,Sales and Marketing,IT,Manager,Security Fence',
             'training_material' => 'required|string',
         ], [
             'name.required' => 'Nama lengkap wajib diisi.',
